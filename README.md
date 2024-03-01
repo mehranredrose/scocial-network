@@ -1,1 +1,1 @@
-# scocial-network
+# social-network
