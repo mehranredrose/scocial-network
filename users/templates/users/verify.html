@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="m-auto col-md-8">
+        <div class="content-section">
+            <form action="" method="POST" novalidate>
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Verify code &#128222;</legend>
+                    {% csrf_token %}
+                    {% for instance in form %}
+                        {{ instance | as_crispy_field }}
+                        <p></p>
+                    {% endfor %}
+                </fieldset>
+                <br>
+                <div class="form-group">
+                    <button class="btn btn-outline-success" type="submit">Send OTP</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
